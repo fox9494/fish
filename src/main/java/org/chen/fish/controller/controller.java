@@ -1,0 +1,51 @@
+package org.chen.fish.controller;
+
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
+import org.chen.fish.entity.Job;
+import org.chen.fish.service.MyService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
+
+/**
+ * Created by chenlile on 17-3-15.
+ */
+
+//结合了 @ResponseBody 与 @Controller 注解的功能
+//表示这个controller提供json，xml或其他自定义的内容媒体返回
+@RestController
+public class controller {
+
+
+    private static Logger logger= LoggerFactory.getLogger(controller.class);
+
+    private MyService myService;
+
+
+
+    @ApiOperation(value = "添加测试用例,参数是对象",notes = "插入并测试事务,参数是对象")
+    @ApiImplicitParam(name = "job",value = "Job",required = true,dataType = "Job")
+    @RequestMapping(value = "/job/add",method = RequestMethod.POST)
+    public String jobAdd(@RequestBody Job job){
+        logger.info("request params:{}",job.toString());
+        return "ok";
+    }
+
+
+    @ApiOperation(value = "",notes = "")
+//    @ApiImplicitParam(name = "a",value = "a",required = true,dataType = "int")
+    @RequestMapping(value = "/test/add",method = RequestMethod.POST)
+    public String test(@RequestBody Job a){
+        logger.info("request params:{}",a);
+        return "ok";
+    }
+
+
+
+
+}
