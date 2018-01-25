@@ -45,11 +45,11 @@ public class controller {
         String reslutstr="";
         try {
             long start=System.currentTimeMillis();
-            byte[] result = AESUtil.encrypt(content,key);
-            long end=System.currentTimeMillis();
-            System.out.println("加密后 = " +new String(result)+",cost:"+(end-start));
-            reslutstr = AESUtil.byte2hex(result);
-            System.out.println("加密后 hex= " +reslutstr);
+//            byte[] result = AESUtil.encrypt(content,key);
+//            long end=System.currentTimeMillis();
+//            System.out.println("加密后 = " +new String(result)+",cost:"+(end-start));
+//            reslutstr = AESUtil.byte2hex(result);
+//            System.out.println("加密后 hex= " +reslutstr);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -62,11 +62,11 @@ public class controller {
         logger.info("request params:{}",content.toString());
         byte[] result = new byte[0];
         try {
-            long start=System.currentTimeMillis();
-            byte[] content_byte = AESUtil.hex2byte(content);
-             result = AESUtil.decrypt(content_byte,key);
-            long end=System.currentTimeMillis();
-            System.out.println("解密后 = " +new String(result)+",cost:"+(end-start));
+//            long start=System.currentTimeMillis();
+//            byte[] content_byte = AESUtil.hex2byte(content);
+//             result = AESUtil.decrypt(content_byte,key);
+//            long end=System.currentTimeMillis();
+//            System.out.println("解密后 = " +new String(result)+",cost:"+(end-start));
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -114,7 +114,10 @@
             <!--<version>3.4.0</version>-->
         <!--</dependency>-->
 
-
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>com.h2database</groupId>
