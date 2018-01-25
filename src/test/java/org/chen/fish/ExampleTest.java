@@ -29,7 +29,7 @@ public class ExampleTest {
         list.clear();
         verify(list).add("one");//检查mock的add方法是否调用
         verify(list).clear();
-        verify(list).get(0);
+//        verify(list).get(0);
     }
 
     @Test
@@ -60,9 +60,10 @@ public class ExampleTest {
     public void testMethod5(){
         //mock的参数带matcher的话，所有参数都需要带
         when(serviceHelp.getSome("my","name")).thenThrow(new RuntimeException()).thenReturn("chenzhijia");
-        serviceHelp.getSome("my","name");
+//        serviceHelp.getSome("my","name");
+        serviceHelp.getSome("my","abc");
 //        System.out.println(serviceHelp.getSome("my","name"));
-        System.out.println(serviceHelp.getSome("my","name"));
+//        System.out.println(serviceHelp.getSome("my","name"));
     }
 
     @Test

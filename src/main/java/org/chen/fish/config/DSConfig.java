@@ -23,6 +23,8 @@ public class DSConfig {
         config.setJdbcUrl(env.getProperty("spring.datasource.url"));
         config.setUsername(env.getProperty("spring.datasource.username"));
         config.setPassword(env.getProperty("spring.datasource.password"));
+        config.setMaximumPoolSize(155);
+        config.setMinimumIdle(10);
         HikariDataSource ds = new HikariDataSource(config);
         return ds;
 

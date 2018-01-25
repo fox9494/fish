@@ -21,6 +21,8 @@ public class Myconfig{
 
     private String file;
 
+
+
     @PostConstruct
     public void init(){
         logger.info("~~~~~~~~~~~`os:{},file:{}",os,file);
